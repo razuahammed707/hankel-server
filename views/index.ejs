@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/style.css" media="all">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/main.css">
+		<script src="js/main.js"></script>
+		<link rel="stylesheet" href="css/panel.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+			<script src="js/panel.js"></script>
+
+</head>
+
+<body dir="rtl">
+
+
+		<!-- The Modal -->
+	<div id="myModal" class="modal">
+
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <span class="close">&times;</span>
+	    <h1>מקרא מקלדת</h1>
+	    <hr>
+
+	    <img src="img/tab.png" style="margin">
+	    <h3 class="modalInner">לחץ על הטאב בכדי לעבור בין הטאבים השונים בדף</h3>
+
+
+	    <img src="img/enter.png" style="margin">
+	    <h3 class="modalInner">בכדי לפתוח טאב נבחר הקש ENTER</h3>
+
+
+	    <img src="img/arrow.png" style="margin">
+	    <h3 class="modalInner">בכדי לעלות למעלה, למטה, ימינה, שמאלה לחץ על כפתורי החיצים</h3>
+
+
+	    <img src="img/esc.png" style="margin">
+	    <h3 class="modalInner">בכדי לצאת הטאב מסויים לחץ על מקש ה- ESC</h3>
+
+
+	    <img src="img/end.png" style="margin">
+	    <h3 class="modalInner">בכדי לעבור לסוף השורה או מסמך, יש להקיש על מקש ה- END</h3>
+
+
+	    <img src="img/home.png" style="margin">
+	    <h3 class="modalInner">בכדי לעבור לתחילת השורה או מסמך, יש להקיש על מקש הבית</h3>
+
+
+	  </div>
+
+	</div>
+
+
+
+
+
+
+	<div class="mainwrapper">
+
+		<div id="panel_icon" onclick="myFunction()">
+	<img src="img/icon.png">
+</div>
+
+<div id="panel_box">
+	<ul>
+
+		<li  id="panelIcon">
+			<div class="listOption" onclick="displayNone()">
+				<p>
+					<img src="img/icon.png" > <span class="closep">סגור</span></p>
+			</div>
+		</li>
+
+		<li >
+			<div class="listOption"><button id="myBtn"><img src="img/tabA.png" class="menuIcon">מקלדת</button></div>
+		</li>
+
+		<li >
+			<div class="listOption"><button id="increase"><img src="img/increase.png" class="menuIcon">הגדל טקסט</button></div>
+		</li>
+
+		<li >
+			<div class="listOption"><button id="decrease"> <img src="img/decrese.png" class="menuIcon">הקטן טקסט</button></div>
+		</li>
+
+		<li >
+			<div class="listOption"><button id="black"><img src="img/black.png" class="menuIcon">שחור-לבן</button></div>
+		</li>
+
+
+		<li >
+			<div class="listOption"><button id="delcaration" onclick="openInNewTab('Accessabilty_Decleration.pdf')" ><img src="img/declartion.png" class="menuIcon">הצהרת נגישות</button></div>
+		</li>
+
+		<li >
+			<div class="listOption"><button onclick="resetMe()"><img src="img/reset.png" class="menuIcon">איפוס</button></div>
+		</li>
+
+		<li >
+			<div class="listOption"><a href="mailto:guerlain@sch.co.il?Subject=My Guerlain שירות לקוחות" target="_top"> <button><img src="img/mail.png" class="menuIcon">צור קשר</button></a></div>
+		</li>
+
+
+
+
+	</ul>
+
+</div>
+
+
+
+
+		<section class="slider">
+			<img src="images/LANDING-PAGE.JPG">
+		</section>
+
+		<section class="innerContent">
+
+		</section>
+
+		<%if(coupon==false){%>
+			<p style="color:red; text-align:center;">תודה על התעניינותכם, הפעילות הסתיימה.
+רוצים לשמור על קשר לפעילות הבאה ? מלאו הפרטים והישארו מעודכנים... 😁</p>
+		<%}%>
+
+		<section class="formdata">
+			<form name="" alt="" novalidate autocomplete="disable" method="post" action="/" onsubmit="return validateForm()">
+				<div class="two-column">
+
+
+					<p class="fill_up_title">לקבלת הטבת 10% הנחה, מלאו הפרטים מטה:
+</p>
+					<div class="right">
+						<label class="inputLabel" >שם פרטי:</label>
+						<input type="text" name="FirstName" id="FirstName" onkeydown="clearFirstName()">
+						<label class="errorMessage" id="firstNameError">h1</label>
+					</div>
+
+
+
+
+					<div class="left">
+						<label class="inputLabel">שם משפחה:</label>
+						<input type="text" name="LastName" id="LastName" onkeydown="clearLastName()">
+						<label class="errorMessage" id="lastNameError">h1</label>
+					</div>
+
+				</div>
+				<div style="clear: both;"></div>
+
+			<!-- 	<div class="email">
+					<label class="inputLabel">דואר אלקטרוני:</label>
+					<input type="text" name="email" id="email" onkeydown="clearEmail()">
+					<label class="errorMessage" id="emailError">h1</label>
+				</div>
+				 -->
+
+				 <div class="two-column">
+
+					<div class="right">
+						<label class="inputLabel" >טלפון נייד:</label>
+						<input type="text" name="telephone" id="telephone"  onkeydown="clearTelephone()">
+						<label class="errorMessage" id="telephoneError">h1</label>
+					</div>
+
+					<div class="left">
+						<label class="inputLabel">כתובת מייל: </label>
+						<input type="text" name="email" id="email" onkeydown="clearEmail()">
+						<label class="errorMessage" id="emailError">h1</label>
+					</div>
+
+				</div>
+
+				<div style="clear: both;"></div>
+
+
+
+
+
+				<div class="lastContent">
+
+					<div class="rightCheckbox">
+
+						<div class="check_box">
+
+							<div class="box1">
+								<input type="checkbox" name="checkbox1" id="checkbox1" onclick="toggle1()">
+							</div>
+
+							<div class="box2">
+									<p>הנני מאשר/ת רישום פרטיי במאגר לקוחות קבוצת בריל, מספר 600016134 שבעליו היא בריל תעשיות נעליים בע"מ, ח.צ. 200038647, מרחוב פריימן 20, ראשל"צ, לצורך קבלת פרסומים ועדכונים באמצעי המדיה השונים מבריל וחברות בשליטתה. בכל עת, ניתן להפסיק לקבל עדכונים ולבקש להימחק מהמאגר בפניה בכתב לכתובת הנ"ל או בדרך שתצוין בדיוור עצמו.</p>
+									<label class="errorMessage" id="checkbox1Error">יש לאשר את תקנון הפעילות</label>
+							</div>
+
+						</div>
+
+
+					</div>
+
+
+
+					<div class="leftSubmit">
+						<div class="submitbtn">
+						<input type="submit" value="שליחה">
+						</div>
+
+					</div>
+
+
+
+				</div>
+
+
+
+
+			</form>
+
+
+
+		</section>
+
+				<footer>
+					<img src="images/banner-footer.jpg">
+					<p style="text-align:center">הטבה אחת בלבד ללקוח | מימוש ההטבה עד ל-30.6.18, באחריות הלקוח וע"פ שיקול דעתו | ההטבה אישית ואינה ניתנת להעברה | למימוש חד פעמי באחת מהרשתות המשתתפות: גלי, סולוג, לי קופר, ניין ווסט, איזי ספיריט, אן קליין ושואו-אופ | מוגבל ל-60,000 הנרשמים הראשונים | כפוף לתנאי המבצעים ולתקנון האתר</p>
+				</footer>
+
+
+
+	</div>
+
+
+	      <script>
+
+				document.getElementById('telephone').addEventListener('input', function (e) {
+				  var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,7})/);
+				  e.target.value = !x[2] ? x[1] : '' + x[1] + '-' + x[2] + (x[3] ? '-' + x[3] : '');
+				});
+
+
+
+	      // Get the modal
+	      var modal = document.getElementById('myModal');
+
+	      // Get the button that opens the modal
+	      var btn = document.getElementById("myBtn");
+
+	      // Get the <span> element that closes the modal
+	      var span = document.getElementsByClassName("close")[0];
+
+	      // When the user clicks the button, open the modal
+	      btn.onclick = function() {
+	          modal.style.display = "block";
+	      }
+
+	      // When the user clicks on <span> (x), close the modal
+	      span.onclick = function() {
+	          modal.style.display = "none";
+	      }
+
+	      // When the user clicks anywhere outside of the modal, close it
+	      window.onclick = function(event) {
+	          if (event.target == modal) {
+	              modal.style.display = "none";
+	          }
+	      }
+	      </script>
+
+
+</body>
+
+</html>
